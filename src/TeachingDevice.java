@@ -38,10 +38,18 @@ public abstract class TeachingDevice {
         }
     }
 
+    public void removeStatusChangedHandler(EventHandler<DeviceStatusChangedEventArgs> handler) {
+        statusChangedHandlers.remove(handler);
+    }
+
     public void addAlertRaisedHandler(EventHandler<DeviceAlertEventArgs> handler) {
         if (handler != null && !alertRaisedHandlers.contains(handler)) {
             alertRaisedHandlers.add(handler);
         }
+    }
+
+    public void removeAlertRaisedHandler(EventHandler<DeviceAlertEventArgs> handler) {
+        alertRaisedHandlers.remove(handler);
     }
 
     public void changeStatus(DeviceStatus newStatus) {
