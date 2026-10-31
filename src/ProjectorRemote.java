@@ -7,6 +7,9 @@ public class ProjectorRemote extends TeachingDevice {
 
     public ProjectorRemote(String id, String name, int initialBattery) {
         super(id, name);
+        if (initialBattery < 0 || initialBattery > 100) {
+            throw new InvalidDeviceReadingException(id, initialBattery);
+        }
         this.batteryLevel = initialBattery;
     }
 
@@ -15,6 +18,10 @@ public class ProjectorRemote extends TeachingDevice {
     }
 
     public void updateBatteryLevel(int newLevel) {
+        if (newLevel < 0 || newLevel > 100) {
+            throw new InvalidDeviceReadingException(getId(), newLevel);
+        }
+
         this.batteryLevel = newLevel;
 
         if (newLevel == 0) {

@@ -8,6 +8,12 @@ public class WirelessMicrophone extends TeachingDevice {
 
     public WirelessMicrophone(String id, String name, int initialBattery, int initialSignalQuality) {
         super(id, name);
+        if (initialBattery < 0 || initialBattery > 100) {
+            throw new InvalidDeviceReadingException(id, initialBattery);
+        }
+        if (initialSignalQuality < 0 || initialSignalQuality > 100) {
+            throw new InvalidDeviceReadingException(id, initialSignalQuality);
+        }
         this.batteryLevel = initialBattery;
         this.signalQuality = initialSignalQuality;
     }
@@ -21,6 +27,10 @@ public class WirelessMicrophone extends TeachingDevice {
     }
 
     public void updateBatteryLevel(int newLevel) {
+        if (newLevel < 0 || newLevel > 100) {
+            throw new InvalidDeviceReadingException(getId(), newLevel);
+        }
+
         this.batteryLevel = newLevel;
 
         if (newLevel == 0) {
@@ -31,6 +41,10 @@ public class WirelessMicrophone extends TeachingDevice {
     }
 
     public void updateSignalQuality(int newQuality) {
+        if (newQuality < 0 || newQuality > 100) {
+            throw new InvalidDeviceReadingException(getId(), newQuality);
+        }
+
         this.signalQuality = newQuality;
 
         if (newQuality == 0) {
