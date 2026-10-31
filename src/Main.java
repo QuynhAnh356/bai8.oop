@@ -10,8 +10,8 @@ public class Main {
         ProjectorRemote projector1 = new ProjectorRemote("PRJ-101", "Dieu khien may chieu P101", 85);
         ProjectorRemote projector2 = new ProjectorRemote("PRJ-202", "Dieu khien may chieu P202", 45);
 
-        AirConditionerRemote ac1 = new AirConditionerRemote("AC-101", "Dieu khien dieu hoa P101", "Phong 101");
-        AirConditionerRemote ac2 = new AirConditionerRemote("AC-202", "Dieu khien dieu hoa P202", "Phong 202");
+        AirConditionerRemote ac1 = new AirConditionerRemote("AC-101", "Dieu khien dieu hoa P101", "101");
+        AirConditionerRemote ac2 = new AirConditionerRemote("AC-202", "Dieu khien dieu hoa P202", "202");
 
         WirelessMicrophone mic1 = new WirelessMicrophone("MIC-101", "Micro giang duong P101", 90, 80);
         WirelessMicrophone mic2 = new WirelessMicrophone("MIC-HTA", "Micro hoi truong A", 15, 50);
