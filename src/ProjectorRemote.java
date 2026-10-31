@@ -22,6 +22,10 @@ public class ProjectorRemote extends TeachingDevice {
             throw new InvalidDeviceReadingException(getId(), newLevel);
         }
 
+        if (newLevel == this.batteryLevel) {
+            return;
+        }
+
         this.batteryLevel = newLevel;
 
         if (newLevel == 0) {
